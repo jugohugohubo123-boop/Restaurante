@@ -86,8 +86,36 @@ header .header__nav ul{
     padding: 1rem 2rem;
     cursor: pointer;
     border-radius: 5rem;
+    display: inline-block;
+    
 }
 
 .cta-primary:hover{
     background: var(--coloracentooscuro);
+}
+
+.hero {
+    background: url('../img/portada_here.jpeg') center / cover no-repeat;
+    height: 100vh;
+    margin-top: 60px;
+}
+
+.hero__overlay{
+    background: rgba(0, 0, 0, 60%);
+    height: 100%;
+}
+
+.hero__contenido{
+    color: var(--colorneutroclaro);
+    height: 100%;
+    padding-top: 20rem;
+}
+
+.hero__contenido h2{
+    font-size: 4.8rem;
+    font-family: var(--fuente-secundaria);
+}
+
+.hero__contenido p{
+    margin: 1rem 0 2rem;
 }

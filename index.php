@@ -11,26 +11,33 @@
         <header class="header">
             <div class="header__contenido container">
                 <p class="header__titulo">Gourmet Criollo</p>
-                  <nav class="header__nav">
+                <nav class="header__nav">
                     <ul>
-                    <li><a href="#" >Inicio</a></li>
-                    <li><a href="#" >Carta</a></li>
-                    <li><a href="#" >Blog</a></li>
-                    <li><a href="#" >Contactos</a></li>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Carta</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contactos</a></li>
                     </ul>
-                  </nav>
-                  <a class="cta-primary" href="#">Reservar Mesa </a>
+                </nav>
+                <a class="cta-primary" href="#">Reservar Mesa</a>
             </div>
-            </header>
+        </header>
         
         <main>
-            <p>
-                Contendo Principal
-            </p>
+            <section class="hero">
+                <div class="hero__overlay">
+                    <div class="hero__contenido">
+                        <h2>Gourmet Criollo</h2>
+                        <p>un ambiente acogedor y familiar.</p>
+                        <a class="cta-primary" href="#">Ver Menú</a>
+                    </div>
+                </div>
+            </section>
         </main>
-<footer class="foooter">
-    <p>footer</footer></p>
-</foooter>
-</div>
+
+        <footer class="footer">
+            <p>footer</p>
+        </footer>
+    </div>
 </body>
 </html>
