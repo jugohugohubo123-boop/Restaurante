@@ -1,121 +1,184 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-/*modelo de cajas en css*/
-
-:root{
+:root {
     --fuente-principal: 'Montserrat', sans-serif;
     --fuente-secundaria: 'Playfair Display', serif;
-    --colorojo: #C70039;
+    
+    /* COLORES EXACTOS DEL PROFESOR (Extraídos de la captura) */
+    --color-header: #5D4037;       /* Marrón de la barra superior */
+    --colorojo: #B71C1C;          /* Rojo oscuro de los botones */
+    --color-sobre-oscuro: #E0E0E0; /* Gris muy claro para textos sobre marrón */
+    
+    /* Resto de variables que tenías */
     --coloramarillo: #FFC300;
     --coloracentoclaro: #28B463;
     --coloracentooscuro: #1C2833;
     --colorneutroclaro: #FDFEFE;
     --colorneutrooscuro: #17202A;
     --colorblanco: #FFFFFF;
-
 }
 
-*{
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-}
-
-*,*::before, *::after{
-    box-sizing: inherit;
-}
-
-html{
     box-sizing: border-box;
-    font-size: 62.5%;
 }
-body{
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
     font-family: var(--fuente-principal);
     background-color: var(--colorneutroclaro);
     color: var(--colorneutrooscuro);
     font-size: 1.6rem;
 }
 
-.container{
-    width: minmax(90%, 120rem);
+/* CONTENEDOR - Centra el contenido */
+.container {
+    max-width: 120rem;
+    width: 90%;
     margin: 0 auto;
 }
 
-.a{
+a {
     text-decoration: none;
-    color: var(--colorneutrooscuro);
 }
 
-.layout{
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
+/* HEADER - Barra superior marrón */
 .header {
-    color: var(--coloracentooscuro);
+    background-color: var(--color-header); /* Corregido al marrón exacto */
     padding: 1.5rem 0;
 }
 
-.header .header-contenido{
+.header__contenido {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header .header__logo{
+.header__logo {
     font-family: var(--fuente-secundaria);
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: bold;
-    font: var(--colorneutroclaro);
+    color: var(--colorneutroclaro); /* Texto blanco/claro sobre marrón */
 }
 
-header .header__nav ul{
+.header__nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    gap: 3rem; /* Espacio entre enlaces */
     align-items: center;
 }
 
-.header .header__nav a{
-    color: var(--colorneutrooscuro);
+.header__nav a {
+    color: var(--color-sobre-oscuro); /* Gris claro para los links */
+    font-size: 1.8rem;
 }
 
-.cta-primary{
-    background: var(--coloramarillo);
-    color: var(--colorneutrooscuro);
-    padding: 1rem 2rem;
+/* BOTÓN RESERVAR (cta-primary) */
+.cta-primary {
+    background-color: var(--colorojo); /* Corregido al rojo exacto */
+    color: var(--colorblanco);
+    padding: 1rem 2.5rem;
     cursor: pointer;
-    border-radius: 5rem;
+    border-radius: 0.5rem;
     display: inline-block;
-    
+    font-weight: bold;
+    font-size: 1.6rem;
 }
 
-.cta-primary:hover{
-    background: var(--coloracentooscuro);
-}
-
+/* HERO SECTION - Imagen de fondo */
 .hero {
+    /* CORREGIDO: Ruta exacta a tu imagen 'portada_here.jpeg' */
     background: url('../img/portada_here.jpeg') center / cover no-repeat;
-    height: 100vh;
-    margin-top: 60px;
+    height: 70vh; /* Altura ajustada para parecerse al modelo */
+    display: flex;
+    align-items: center;
 }
 
-.hero__overlay{
-    background: rgba(0, 0, 0, 60%);
+.hero__overlay {
+    background: rgba(0, 0, 0, 0.5); /* Sombra oscura sobre la imagen */
+    width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.hero__contenido{
+.hero__contenido {
     color: var(--colorneutroclaro);
-    height: 100%;
-    padding-top: 20rem;
+    text-align: left; /* Textos alineados a la izquierda tal como el modelo */
 }
 
-.hero__contenido h2{
-    font-size: 4.8rem;
+.hero__contenido h2 {
+    font-size: 5.5rem; /* Tamaño grande para el título */
     font-family: var(--fuente-secundaria);
+    margin: 0;
 }
 
-.hero__contenido p{
-    margin: 1rem 0 2rem;
+.hero__contenido p {
+    font-size: 2.2rem;
+    margin: 1.5rem 0 3rem; /* Espaciado ajustado */
+}
+
+
+/* --- SECCIÓN MENÚ / CARTA CORREGIDA --- */
+.menu {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Ajustamos proporciones para que la carta no sea tan ancha */
+    gap: 8rem; /* Aumentamos el espacio entre el cuadro amarillo y el texto de la derecha */
+    margin: 8rem auto; /* Le damos 8rem de espacio arriba para que no se pegue al Hero */
+    align-items: start; /* Alinea ambos cuadros al inicio para que no se estiren raro */
+}
+
+.menu__carta {
+    background-color: #F4D03F; /* Este es el amarillo más suave que usa el profesor */
+    padding: 5rem; /* Más espacio interno para que respire el contenido */
+    border-radius: 0.8rem;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1); /* Una sombra suave para dar profundidad */
+}
+
+.menu__carta h2 {
+    font-family: var(--fuente-secundaria);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--colorneutrooscuro);
+}
+
+.carta__contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mantiene las dos columnas internas */
+    gap: 4rem; /* Separación entre Entradas y Fondo */
+}
+
+.carta__seccion h3 {
+    font-family: var(--fuente-secundaria);
+    font-size: 2.4rem;
+    border-bottom: 1px solid rgba(0,0,0,0.2); /* Línea más fina y elegante */
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    color: var(--colorojo); /* El profe suele poner los subtítulos en rojo */
+}
+
+.carta__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+}
+
+/* --- SECCIÓN SABORES DEL PERÚ --- */
+.menu__historia {
+    padding-top: 2rem; /* Alinea el texto con el inicio de la carta amarilla */
+}
+
+.menu__historia h2 {
+    font-family: var(--fuente-secundaria);
+    font-size: 5rem; /* Letra bien grande como en el original */
+    line-height: 1.1;
+    color: var(--color-header);
+    margin-bottom: 2rem;
 }
